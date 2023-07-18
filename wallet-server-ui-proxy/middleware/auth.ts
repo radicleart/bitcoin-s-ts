@@ -91,6 +91,7 @@ export const login = function(req: BodyRequest<LoginRequest>, res: Response) {
 export const verify = function(req: Request, res: Response, next: NextFunction) {
   // get token from request header
   const authHeader = req.headers["authorization"]
+  console.log('verify: ' + authHeader)
   if (authHeader) {
     // the request header contains the token "Bearer <token>", split the string and use the second value in the split array.
     const token = authHeader.split(" ")[1]
